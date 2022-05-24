@@ -11,3 +11,8 @@ bin/kafka-console-consumer.sh --topic testtopic --from-beginning --bootstrap-ser
 Boot from spark directory
 
 ./bin/spark-submit --class program.Program  ~/IdeaProjects/test1/target/test1-1.0-SNAPSHOT-jar-with-dependencies.jar
+./bin/spark-submit --master yarn --deploy-mode cluster --class lab2.SparkApplication ~/IdeaProjects/Lab2Kivi/target/Lab2Kivi-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+./start-yarn.sh
+./start-dfs.sh
+hdfs dfsadmin -safemode leave
