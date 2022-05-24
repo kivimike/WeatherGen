@@ -1,0 +1,13 @@
+Boot from Kafka directory
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+bin/kafka-topics.sh --create --topic testtopic --bootstrap-server localhost:9092
+bin/kafka-topics.sh --describe --topic testtopic --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic testtopic --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic testtopic --from-beginning --bootstrap-server localhost:9092
+
+----
+Boot from spark directory
+
+./bin/spark-submit --class program.Program  ~/IdeaProjects/test1/target/test1-1.0-SNAPSHOT-jar-with-dependencies.jar
